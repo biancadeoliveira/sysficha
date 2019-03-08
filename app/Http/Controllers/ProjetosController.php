@@ -57,6 +57,17 @@ class ProjetosController extends Controller
 	}
 
 
+	public function buscar(Request $request){
+
+		$termo = $request->input('buscar');
+
+		$resp = new \App\Models\Projetos();
+		$result = $resp->buscarProjetos($termo);
+
+		return view('adm/projetos-lista', ['projetos' => $result]);
+
+	}
+
 
 	public function exibirficha(Request $request, $id){
 

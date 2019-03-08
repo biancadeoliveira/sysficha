@@ -14,6 +14,20 @@
                     </div>
                 </div>
             @endif
+            <div class="col-12 col-md-4 m-auto">
+            	<form method="POST" class="mt-2 mb-2" action="{{Route('buscarprojetos')}}">
+            	@csrf
+            	<div class="input-group mb-3">
+					<input type="text" class="form-control" placeholder="digite o nome do projeto..." name="buscar">
+				  	<div class="input-group-append">
+				    	<input class="btn btn-secondary" type="submit" id="button-addon2" value="Buscar">
+				  	</div>
+				</div>
+
+
+            	</form>
+            </div>
+            
 			<table class="table table-bordered table-responsive-md table-striped table-hover">
 				<thead class="thead-dark">
 					<tr>

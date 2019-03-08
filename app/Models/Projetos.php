@@ -71,6 +71,16 @@ class Projetos extends Model
 	}
 
 
+	public function buscarProjetos($termo){
+
+		$projetos = DB::table('projeto')
+            ->join('responsavel', 'projeto.id_resp', '=', 'responsavel.id')
+            ->select('projeto.*', 'responsavel.nome AS nomeResp')
+            ->where('projeto.nome', 'like', '%'.$termo.'%')
+            ->paginate(15);
+		return $projetos;
+
+	}
 
 
 	public function exibirFicha($id){

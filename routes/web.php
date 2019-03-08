@@ -35,6 +35,7 @@ Route::group(['middleware' => ['funcionario']], function () {
 	Route::get('/projetos', 'ProjetosController@listar')->name('projetos');
 	Route::get('/novo/projeto', 'ProjetosController@exibirCadastro')->name('exibircadprojeto');
 	Route::post('/novo/projeto', 'ProjetosController@cadastrar')->name('cadastrarprojeto');
+	Route::post('/buscar/projetos', 'ProjetosController@buscar')->name('buscarprojetos');
 
 	Route::get('/projetos/{id}', 'ProjetosController@exibirficha')->name('fichaprojeto');
 	Route::post('/novo/info-projeto}', 'DadosProjetoController@cadastrar')->name('cadastrarinfoprojeto');
